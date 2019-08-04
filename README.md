@@ -5,7 +5,7 @@
 ## Mainnet Address
 
 ```
-
+Contract54TrDQe629JYvtGYSZdp5x453k8FHTmupgfNGVMtYCGy
 ```
 
 ## Commands 
@@ -13,7 +13,7 @@
 ### Issue
 
 ```
-iwallet call $DISTRO_CONTRACT issue "[\"distro\", \"admin\", \"100000\"]" --account admin -s $GRPC_URL --chain_id $CHAIN_ID
+iwallet call $DISTRO_CONTRACT issue "[\"distro\", \"admin\", \"100000\"]" --account $IOST_USER -s $GRPC_URL --chain_id $CHAIN_ID
 ```
 
 ### Transfer
