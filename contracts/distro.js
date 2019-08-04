@@ -2,7 +2,7 @@ const name = 'distro';
 const fullName = 'Distribution Token';
 const decimal = 6;
 const totalSupply = 10000000;
-const admin = 'admin';
+const admin = 'blockarcade';
 const burnRate = 0.05;
 
 class Token {
