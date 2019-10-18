@@ -15,7 +15,7 @@ class Token {
                 fullName,
                 decimal,
                 canTransfer: true,
-                onlyIssuerCanTransfer: false,
+                onlyIssuerCanTransfer: true,
             }
         ]);
 
@@ -93,7 +93,12 @@ class Token {
         this._checkToken(token_name);
         amount = this._amount(amount);
 
-        const amountAfterBurn = this._burn(from, amount);
+        let amountAfterBurn = amount;
+        // Don't burn for iostdex.io.
+        if ([to, from].indexOf('ContractBqYBBN1JuvvcmbaWkbSv6Pa334UJinM9vTPWPC2hvUDL') === -1) {
+            amountAfterBurn = this._burn(from, amount);
+        }
+
         blockchain.callWithAuth("token.iost", "transfer", [token_name, from, to, amountAfterBurn, memo]);
 
         // Update balances for both users.
